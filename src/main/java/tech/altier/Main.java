@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Main {
-    private static String API_KEY = "a95fb9d5cd12a501c157aea016414ee5";
+    private static String API_KEY = "e4e79003d371d80a3fb7f7be39e1f6ee";
 
     public static void main(String[] args) throws JSONException, IOException {
         chat("hello_world");
@@ -22,7 +22,7 @@ public class Main {
 * @return response
 */
 public static String chat(String input) throws IOException, JSONException {
-    String URL = "https://graph.facebook.com/v16.0/105954558954427/messages";
+    String URL = "https://graph.facebook.com/v16.0/1384765148735827/messages";
     HttpURLConnection con = (HttpURLConnection) new URL(URL).openConnection();
 
     con.setRequestMethod("POST");
