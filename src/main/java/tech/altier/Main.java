@@ -1,5 +1,8 @@
 package tech.altier;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,6 +10,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Main {
+    private static String API_KEY = "a95fb9d5cd12a501c157aea016414ee5";
+
+    public static void main(String[] args) throws JSONException, IOException {
+        chat("hello_world");
+    }
 
 /**
 * ChatGPT API caller function
@@ -22,10 +30,15 @@ public static String chat(String input) throws IOException, JSONException {
     con.setRequestProperty("Authorization", "Bearer " + API_KEY);
 
     JSONObject data = new JSONObject();
-    data.put("model", "text-davinci-003");
-    data.put("prompt", input);
-    data.put("max_tokens", 4000);
-    data.put("temperature", 1.0);
+    data.put("messaging_product", "whatsapp");
+    data.put("to", "+94761824607");
+    data.put("type", "template");
+    JSONObject template = new JSONObject();
+    template.put("name", input);
+    JSONObject language = new JSONObject();
+    language.put("code", "en_US");
+    template.put("language", language);
+    data.put("template", template);
 
     con.setDoOutput(true);
     con.getOutputStream().write(data.toString().getBytes());
