@@ -14,4 +14,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.Bindambc</groupId>
+            <artifactId>whatsapp-business-java-api</artifactId>
+            <version>v0.3.2</version>
+        </dependency>
+    </dependencies>
+
 </project>
