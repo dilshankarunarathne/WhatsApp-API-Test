@@ -13,12 +13,12 @@ public class Wrapper {
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi();
 
         var message = Message.MessageBuilder.builder()//
-                .setTo()//
+                .setTo("+94786241686")//
                 .buildTextMessage(new TextMessage()//
                         .setBody(Formatter.bold("Hello world!") + "\nSome code here: \n" + Formatter.code("hello world code here"))//
                         .setPreviewUrl(false));
 
 
-        whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+        whatsappBusinessCloudApi.sendMessage("+94788978085", message);
     }
 }
