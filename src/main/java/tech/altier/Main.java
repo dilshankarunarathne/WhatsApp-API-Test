@@ -16,7 +16,7 @@ public class Main {
                     .uri(new URI("https://graph.facebook.com/v13.0/0788978085/messages"))
                     .header("Authorization", "Bearer <YOUR BEARER TOKEN>")
                     .header("Content-Type", "application/json")
-                    .POST(HttpRequest.BodyPublishers.ofString("{ \"messaging_product\": \"whatsapp\", \"recipient_type\": \"individual\", \"to\": \"<TARGET PHONE NUMBER>\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }"))
+                    .POST(HttpRequest.BodyPublishers.ofString("{ \"messaging_product\": \"whatsapp\", \"recipient_type\": \"individual\", \"to\": \"+94786241686\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }"))
                     .build();
             HttpClient http = HttpClient.newHttpClient();
             HttpResponse<String> response = http.send(request,BodyHandlers.ofString());
